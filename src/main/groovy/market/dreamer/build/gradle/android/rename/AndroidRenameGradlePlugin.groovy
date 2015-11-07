@@ -93,7 +93,7 @@ final class AndroidRenameGradlePlugin implements Plugin<Project> {
     }
 
     private String getZipAlignedFragment(renameConfig, zipAligned) {
-        if (renameConfig.zipAligned in renameConfig.includes) {
+        if (renameConfig.zipAligned) {
             return callOrReturn(renameConfig.zipAligned, zipAligned);
         }
         return "";

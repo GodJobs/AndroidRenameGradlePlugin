@@ -67,10 +67,6 @@ class PluginExtension {
         return zipAligned
     }
 
-    void setZipAligned(zipAlign) {
-        this.zipAligned = zipAlign
-    }
-
     def getIncludes() {
         return includes
     }
