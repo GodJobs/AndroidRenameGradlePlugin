@@ -1,5 +1,5 @@
 group 'market.dreamer.build.android'
-version '0.0.2'
+version '0.0.3'
 
 apply plugin: 'groovy'
 apply plugin: 'java'
@@ -43,7 +43,7 @@ artifacts {
     archives javadocJar, sourcesJar
 }
 
-if (hasProperty('deploy')) {
+if (hasProperty('ossrhUsername') && hasProperty('ossrhPassword')) {
     apply plugin: 'maven'
     apply plugin: 'signing'
     signing {

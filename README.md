@@ -50,7 +50,6 @@ renameConfig {
 * `buildType` ：编译类型。定义为 `Closure` 时，传入参数为 `buildType` 。
 * `flavors` ： `ProductFlavors` 。定义为 `Closure` 时，会将 `productFlavors` 列表作为参数传入。
 * `divider` ：分割符。默认分割符为 `-` ，可以通过这个字段做修改，这个字段也可以定义为 `Closure` 。
-* `zipAligned` ：此配置仅在 `Application` 时有效果。定义为 `Closure` 时，传入参数为是否需要对齐布尔值。
 * `includes` ：此配置定义最后的输出结果包含哪些部分，比如 `includes = [applicationName]` ，这时只能得到结果 `Test.[apk/aar]` ，而忽略掉了其他部分。除了以上给定的配置，也可以在 `includes` 中扩展自定义的 `Closure` 。
 比如 `includes = [applicationName, {return new Date()}]` ，这时可以得到结果 `Test-20151017.[apk/aar]` 之类的结果。如果想要灵活的扩展，可以使用这个方式实现。
 
@@ -66,12 +65,16 @@ renameConfig {
     buildType = { buildType -> buildType.name }
     flavors = { flavors -> flavors*.name.join(divider) }
     divider = { "-" }
-    zipAligned = { zipAligned -> zipAligned ? "" : "unaligned" }
-    includes = [applicationName, versionName, versionCode, buildType, flavors, zipAligned];
+    includes = [applicationName, versionName, versionCode, buildType, flavors];
 }
 ```
 
 如果想实现更深入的定制，可以按照以上配置进行自定义。
+
+ChangeLog
+================
+0.0.3:
+    * Fix zip align error
 
 License
 =======
