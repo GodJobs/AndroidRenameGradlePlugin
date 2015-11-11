@@ -73,8 +73,13 @@ renameConfig {
 
 ChangeLog
 ================
+0.0.4:
+
+- Fix error building when clean
+
 0.0.3:
-    * Fix zip align error
+
+- Fix zip align error
 
 License
 =======

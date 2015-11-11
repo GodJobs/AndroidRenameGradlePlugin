@@ -5,8 +5,8 @@ import market.dreamer.build.gradle.android.rename.callable.*
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-import static market.dreamer.build.gradle.android.rename.PluginUtils.callOrReturn
 import static market.dreamer.build.gradle.android.rename.PluginConfig.EXTENSION_NAME
+import static market.dreamer.build.gradle.android.rename.PluginUtils.callOrReturn
 
 final class AndroidRenameGradlePlugin implements Plugin<Project> {
     private Project project;
@@ -19,9 +19,8 @@ final class AndroidRenameGradlePlugin implements Plugin<Project> {
         project = target;
         project.extensions.create(EXTENSION_NAME, PluginExtension);
         androidExtension = project.android;
-        project.afterEvaluate {
-            applyChanges();
-        }
+        project.afterEvaluate { /*TODO check validation*/ }
+        applyChanges();
     }
 
     private def getNonTestVariants() {

@@ -1,5 +1,5 @@
 group 'market.dreamer.build.android'
-version '0.0.3'
+version '0.0.4'
 
 apply plugin: 'groovy'
 apply plugin: 'java'
