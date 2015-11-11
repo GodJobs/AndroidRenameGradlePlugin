@@ -17,7 +17,7 @@ Integration
 ```gradle
 dependencies {
     classpath 'com.android.tools.build:gradle:1.2.3'
-    classpath 'market.dreamer.build.android:android-rename:0.0.2'
+    classpath 'market.dreamer.build.android:android-rename:0.0.5'
 }
 ```
 
@@ -73,6 +73,10 @@ renameConfig {
 
 ChangeLog
 ================
+0.0.5:
+
+- Fix build exception
+
 0.0.4:
 
 - Fix error building when clean

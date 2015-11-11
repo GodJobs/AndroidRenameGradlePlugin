@@ -19,8 +19,10 @@ final class AndroidRenameGradlePlugin implements Plugin<Project> {
         project = target;
         project.extensions.create(EXTENSION_NAME, PluginExtension);
         androidExtension = project.android;
-        project.afterEvaluate { /*TODO check validation*/ }
-        applyChanges();
+        project.afterEvaluate {
+            //TODO check validation
+            applyChanges();
+        }
     }
 
     private def getNonTestVariants() {
